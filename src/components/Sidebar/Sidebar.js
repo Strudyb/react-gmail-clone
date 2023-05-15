@@ -13,58 +13,63 @@ import DuoIcon from "@material-ui/icons/Duo";
 import PhoneIcon from "@material-ui/icons/Phone";
 import { Button, IconButton } from "@material-ui/core";
 import SidebarOption from "./SidebarOption";
-
-const sidebarOptions = [
-  {
-    icon: InboxIcon,
-    title: "Inbox",
-    number: 54,
-    selected: true,
-  },
-  {
-    icon: StarIcon,
-    title: "Starred",
-    number: 54,
-    selected: false,
-  },
-  {
-    icon: AccessTimeIcon,
-    title: "Snoozed",
-    number: 54,
-  },
-  {
-    icon: LabelImportantIcon,
-    title: "Important",
-    number: 54,
-    selected: false,
-  },
-  {
-    icon: NearMeIcon,
-    title: "Sent",
-    number: 54,
-    selected: false,
-  },
-  {
-    icon: NoteIcon,
-    title: "Drafts",
-    number: 54,
-    selected: false,
-  },
-  {
-    icon: ExpandMoreIcon,
-    title: "More",
-    number: 54,
-    selected: false,
-  },
-];
-
-const sidebarFooterOptions = [
-  { Icon: PersonIcon },
-  { Icon: DuoIcon },
-  { Icon: PhoneIcon },
-];
+import { useDispatch } from "react-redux";
+import { openSendMessage } from "../../features/mailSlice";
 
 function Sidebar() {
+  const dispatch = useDispatch()
+
+  const sidebarOptions = [
+    {
+      icon: InboxIcon,
+      title: "Inbox",
+      number: 54,
+      selected: true,
+    },
+    {
+      icon: StarIcon,
+      title: "Starred",
+      number: 54,
+      selected: false,
+    },
+    {
+      icon: AccessTimeIcon,
+      title: "Snoozed",
+      number: 54,
+    },
+    {
+      icon: LabelImportantIcon,
+      title: "Important",
+      number: 54,
+      selected: false,
+    },
+    {
+      icon: NearMeIcon,
+      title: "Sent",
+      number: 54,
+      selected: false,
+    },
+    {
+      icon: NoteIcon,
+      title: "Drafts",
+      number: 54,
+      selected: false,
+    },
+    {
+      icon: ExpandMoreIcon,
+      title: "More",
+      number: 54,
+      selected: false,
+    },
+  ];
+
+  const sidebarFooterOptions = [
+    { Icon: PersonIcon },
+    { Icon: DuoIcon },
+    { Icon: PhoneIcon },
+  ];
+  
+
   return (
     <div className="sidebar">
       <Button
@@ -72,6 +77,7 @@ function Sidebar() {
         fontSize="large"
         selected={true}
         className="sidebar__compose"
+        onClick={() => dispatch(openSendMessage())}
       >
         Compose
       </Button>

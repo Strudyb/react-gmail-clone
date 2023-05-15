@@ -14,36 +14,36 @@ import "./EmailList.scss";
 import Section from "../Section/Section";
 import EmailRow from "../EmailRow/EmailRow";
 
-const leftSettingsIcons = [ArrowDropDownIcon, RedoIcon, MoreVertIcon];
-const rightSettingsIcons = [
-  ChevronLeftIcon,
-  ChevronRightIcon,
-  KeyboardHideIcon,
-  SettingsIcon,
-];
-
-const mailSections = [
-  {
-    icon: InboxIcon,
-    title: "Primary",
-    color: "red",
-    selected: true,
-  },
-  {
-    icon: PeopleIcon,
-    title: "Social",
-    color: "#1A73E8",
-    selected: false,
-  },
-  {
-    icon: LocalOfferIcon,
-    title: "Promotions",
-    color: "green",
-    selected: false,
-  },
-];
-
 function EmailList() {
+  const leftSettingsIcons = [ArrowDropDownIcon, RedoIcon, MoreVertIcon];
+  const rightSettingsIcons = [
+    ChevronLeftIcon,
+    ChevronRightIcon,
+    KeyboardHideIcon,
+    SettingsIcon,
+  ];
+
+  const mailSections = [
+    {
+      icon: InboxIcon,
+      title: "Primary",
+      color: "red",
+      selected: true,
+    },
+    {
+      icon: PeopleIcon,
+      title: "Social",
+      color: "#1A73E8",
+      selected: false,
+    },
+    {
+      icon: LocalOfferIcon,
+      title: "Promotions",
+      color: "green",
+      selected: false,
+    },
+  ];
+
   return (
     <div className="emailList">
       <div className="emailList__settings">
